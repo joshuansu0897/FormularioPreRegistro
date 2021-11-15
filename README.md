@@ -38,6 +38,18 @@ El aplicación construida es minificada y los nombres de los archivos incluyen h
 La aplicación está lista para ser lanzada!
 
 Revisa esta sección sobre [lanzamiento](https://facebook.github.io/create-react-app/docs/deployment) para más información.
+## docker
+Puedes usar [Docker](https://docs.docker.com/get-docker/) y/o [docker-compose](https://docs.docker.com/compose/install/) para correr el proyecto.
+
+con `docker-compose` (docker-compose es una herramienta dependiente de Docker). En la raíz del proyecto puedes correr:
+
+### `docker-compose up`
+
+con Docker. En la raíz del proyecto puedes correr:
+
+### `docker build -t migala-form .`
+### `docker run -p 3000:3000 migala-form`
+
 ## Aprende más
 
 Puedes aprender más en la [documentación de Create React App](https://facebook.github.io/create-react-app/docs/getting-started).
