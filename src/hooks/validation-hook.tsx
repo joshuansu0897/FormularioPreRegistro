@@ -1,5 +1,5 @@
-import React, {useContext, useState} from "react";
-import {Option, Question, QuestionsGroup} from "../model/Survey/SurveyModel";
+import {useContext, useState} from "react";
+import {Question, QuestionsGroup} from "../model/Survey/SurveyModel";
 import {FormContext} from "../context/FormContext";
 import {getYearsOld} from "../utils/GeneralUtils";
 import {PrivateEmployeeCategories} from "../model/Survey/occupationCategories/PrivateEmployeeCategories";
