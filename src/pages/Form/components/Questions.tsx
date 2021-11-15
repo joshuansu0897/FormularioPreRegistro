@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from "react";
 import styled from "styled-components";
-import {Option, QuestionsGroup} from "src/model/Survey/SurveyModel";
+import {QuestionsGroup} from "src/model/Survey/SurveyModel";
 import {Input} from "src/theme/components/Input/Input";
 import {Options} from "src/theme/components/Options/Options";
 import {DatePicker} from "src/theme/components/DatePicker/DatePicker";

@@ -1,5 +1,4 @@
 import {Option} from "src/model/Survey/SurveyModel";
-import {generateUniqSerial} from "src/utils/GeneralUtils";
 
 export const PrivateEmployeeCategories: Array<Option> = [
     {

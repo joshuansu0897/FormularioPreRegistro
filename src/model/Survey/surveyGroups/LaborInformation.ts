@@ -1,8 +1,5 @@
 import {SurveyModel} from "../SurveyModel";
 import {generateUniqSerial} from "../../../utils/GeneralUtils";
-import {PrivateEmployeeCategories} from "../occupationCategories/PrivateEmployeeCategories";
-import {PublicEmployeeCategories} from "../occupationCategories/PublicEmployeeCategories";
-import {StudentCategories} from "../occupationCategories/StudentCategories";
 
 export const LaborInformation: SurveyModel = {
     id: generateUniqSerial(),
