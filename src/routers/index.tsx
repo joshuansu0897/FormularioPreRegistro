@@ -1,10 +1,12 @@
 import React, {useEffect, useRef, useState} from "react";
-import {Route, Router, Switch} from "react-router-dom";
+import {Router, Switch} from "react-router-dom";
 import {createBrowserHistory} from "history";
-import {Header} from "src/theme/components/Header/Header";
 import {HomePage} from "src/pages/Home/HomePage";
+import {PrivacyPolicy} from "src/pages/Home/PrivacyPolicy";
 import styled from "styled-components";
 import {MainForm} from "src/pages/Form/MainForm";
+import MainLayout from "src/layouts/MainLayout";
+import PageLayout from "src/layouts/PageLayout";
 
 const history = createBrowserHistory();
 
@@ -35,17 +37,11 @@ export const MainRouter = () => {
         <MainContainer ref={mainContainer}>
             <Router history={history}>
                 <RouteContentContainer>
-                    <Header expanded={false} showContent={showContent}/>
-                    {showPages &&
-                    <PagesContainer>
-
-                        <Switch>
-                            <Route exact path="/form" component={MainForm}/>
-                            <Route path="/" component={HomePage}/>
-                        </Switch>
-
-                    </PagesContainer>
-                    }
+                    <Switch>
+                        <MainLayout exact path="/" component={HomePage} showPages={showPages} showContent={showContent} />
+                        <MainLayout exact path="/form" component={MainForm} showPages={showPages} showContent={showContent} />
+                        <PageLayout exact path="/aviso-privacidad" component={PrivacyPolicy} />
+                    </Switch>
                 </RouteContentContainer>
             </Router>
         </MainContainer>
@@ -65,11 +61,4 @@ const RouteContentContainer = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-`
-
-const PagesContainer = styled.div`
-  width: 100%;
-  height: 700px;
-
-  transition: all 1s;
 `

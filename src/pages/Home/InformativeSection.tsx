@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import DIVIDER from "src/assets/images/register_divisor.png";
 import styled from "styled-components";
 import {LightText, RegularText} from "src/theme/styles/generalstyles/Text";
@@ -22,7 +23,7 @@ export const InformativeSection = () => {
             <CheckBoxContainer>
                 <CheckBox type={'checkbox'} />
                 <Label className="animated-fast fadeIn">
-                    Aceptar <strong>política de privacidad</strong> Ten seguro que tus datos estarán protegidos y nunca serán usados con un fin distinto a la organización digital.
+                    Aceptar <Link to="/aviso-privacidad"><strong>política de privacidad</strong></Link> Ten seguro que tus datos estarán protegidos y nunca serán usados con un fin distinto a la organización digital.
                 </Label>
             </CheckBoxContainer>
 
