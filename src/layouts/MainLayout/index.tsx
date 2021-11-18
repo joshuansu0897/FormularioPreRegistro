@@ -11,7 +11,7 @@ interface MainLayoutProps extends RouteProps {
 
 const MainLayout = ({ component: Component, showPages, showContent,  ...rest }: MainLayoutProps) => (
     <>
-        <Header expanded={false} showContent={showContent}/>
+        <Header expanded={true} showContent={showContent}/>
         {showPages &&
         <PagesContainer>
             <Route

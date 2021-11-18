@@ -13,6 +13,9 @@ export const ProjectSupport: SurveyModel = {
                     id: generateUniqSerial(),
                     title: "¿Cómo te gustaría participar en este proyecto?\nContesta con honestidad, no pasa nada y selecciona solo una opción.",
                     type: "checkbox",
+                    validations: {
+                        max_options_choice: 1
+                    },
                     field: "workInMigala",
                     options: [
                         {
@@ -47,6 +50,9 @@ export const ProjectSupport: SurveyModel = {
                     title: "¿A qué actividades podrías integrarte?\nPuedes seleccionar hasta tres casillas.",
                     type: "checkbox",
                     field: "workActivities",
+                    validations: {
+                        max_options_choice: 3
+                    },
                     options: [
                         {
                             id: generateUniqSerial(),

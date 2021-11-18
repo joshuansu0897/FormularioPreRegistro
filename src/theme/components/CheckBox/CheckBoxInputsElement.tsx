@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from "react";
 import styled from "styled-components";
-import {Option} from "src/model/Survey/SurveyModel";
+import {Option, Validations} from "src/model/Survey/SurveyModel";
 import {LightText} from "src/theme/styles/generalstyles/Text";
 import {FormContext} from "src/context/FormContext";
 import {OptionstList} from "src/theme/components/Options/Options";
@@ -13,10 +13,11 @@ interface CheckBoxList extends Option {
 
 interface CheckBoxInputsElementProps {
     options: Array<CheckBoxList>,
-    field: any
+    field: any,
+    validations?: Validations
 }
 
-export const CheckBoxInputsElement = ({ options, field }: CheckBoxInputsElementProps) => {
+export const CheckBoxInputsElement = ({ options, field, validations }: CheckBoxInputsElementProps) => {
 
     const [ checkOptions, setCheckOptions ] = useState(options)
 
@@ -46,6 +47,12 @@ export const CheckBoxInputsElement = ({ options, field }: CheckBoxInputsElementP
         let index = newOptions.findIndex( f => f.id === option.id )
 
         if(index !== -1){
+            let optionsSelected = newOptions.filter( f => f.selected )
+
+            if(optionsSelected.length >= (validations?.max_options_choice || 0) && checked){
+                return
+            }
+
             newOptions[index].selected = checked
             setCheckOptions(newOptions)
 

@@ -12,6 +12,10 @@ export interface Input {
     field: string
 }
 
+export interface Validations{
+    max_options_choice?: number
+}
+
 export interface Question {
     id: any;
     title: string;
@@ -29,6 +33,7 @@ export interface Question {
     options?: Option[];
     inputs?: Input[];
 
+    validations?: Validations
     field: string
 }
 
