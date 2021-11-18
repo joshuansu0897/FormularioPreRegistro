@@ -64,6 +64,9 @@ export const LaborInformation: SurveyModel = {
                     title: "¿Actualmente cuál es tu ocupación? \nPuedes seleccionar hasta tres casillas",
                     type: "checkbox",
                     field: "occupation",
+                    validations: {
+                        max_options_choice: 3
+                    },
                     options: [
                         {
                             id: "private_employee",
@@ -187,6 +190,9 @@ export const LaborInformation: SurveyModel = {
                     id: "hobby_questions",
                     title: "¿En que actividades participas que no son de trabajo?\nPuedes seleccionar hasta tres casillas",
                     type: "checkbox",
+                    validations:{
+                        max_options_choice: 3
+                    },
                     options: [
                         {
                             id: "hobby_artistic",

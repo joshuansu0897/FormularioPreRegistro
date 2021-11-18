@@ -9,7 +9,7 @@ interface PageLayoutProps extends RouteProps {
 
 const PageLayout = ({ component: Component,  ...rest }: PageLayoutProps) => (
     <>
-        <Header expanded={true}/>
+        <Header expanded={false}/>
         <Container>
             <Box>
                 <Route

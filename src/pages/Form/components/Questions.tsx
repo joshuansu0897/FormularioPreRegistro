@@ -105,6 +105,7 @@ export const Questions = ({ questionsProps, changeSurveySection }: QuestionsProp
                         <CheckBoxInputsElement
                             options={question.options || []}
                             field={question.field}
+                            validations={question.validations}
                         />
                         }
 

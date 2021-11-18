@@ -9,12 +9,12 @@ interface HeaderProps {
     showContent?: () => void
 }
 
-export const Header = ({ showContent = () => {}, expanded = false }: HeaderProps) => {
+export const Header = ({ showContent = () => {}, expanded = true }: HeaderProps) => {
 
     const [isExpanded, setIsExpanded] = useState(expanded)
 
     const changeHeaderExpanded = () => {
-        setIsExpanded(true)
+        setIsExpanded(false)
         showContent()
     }
 
@@ -23,7 +23,7 @@ export const Header = ({ showContent = () => {}, expanded = false }: HeaderProps
 
             <MainImageLogo className="animated-slow zoomIn" src={LOGO_WHITE} />
 
-            { !isExpanded &&
+            { isExpanded &&
                 <SwipeDownContainer className="animated-slow animated-delay-1 fadeIn" onClick={changeHeaderExpanded}>
                     <Description>Loremp ipsum sit Dolor et Amet Consecteturm</Description>
                     <Label>INICIAR ENCUESTA</Label>
@@ -37,7 +37,7 @@ export const Header = ({ showContent = () => {}, expanded = false }: HeaderProps
 
 export const HeaderContainer = styled.div<any>`
   width: 100%;
-  height: ${(props) => (props.isExpanded ? 30 : 100)}vh;
+  height: ${(props) => (props.isExpanded ? 100 : 30)}vh;
   background: ${(props) => props.theme.headerBackground};
   display: flex;
   flex-flow: column;
