@@ -43,12 +43,39 @@ Puedes usar [Docker](https://docs.docker.com/get-docker/) y/o [docker-compose](h
 
 con `docker-compose` (docker-compose es una herramienta dependiente de Docker). En la raíz del proyecto puedes correr:
 
-### `docker-compose up`
+### Desarrollo con docker compose
+
+```sh
+docker-compose up
+```
 
 con Docker. En la raíz del proyecto puedes correr:
 
-### `docker build -t migala-form .`
-### `docker run -p 3000:3000 migala-form`
+```sh
+docker build -t migala-form .
+```
+
+```sh
+docker run -p 3000:3000 migala-form
+```
+
+### Builds para producción
+
+El siguiente comando construirá una imágen de contenedor con una versión
+productiva del proyecto:
+
+```sh
+docker build -t migala-form-prod -f Dockerfile.prod .
+```
+
+Para correr el contenedor:
+
+```sh
+docker run -e PORT=3000 -p 3000:3000 migala-form-prod
+```
+
+La variable de entorno `PORT` indica el el puerto de nginx. El nombre de la 
+variable se puede cambiar desde los archivos de template de nginx.
 
 ## Aprende más
 
