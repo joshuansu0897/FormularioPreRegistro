@@ -39,11 +39,12 @@ La aplicación está lista para ser lanzada!
 
 Revisa esta sección sobre [lanzamiento](https://facebook.github.io/create-react-app/docs/deployment) para más información.
 ## docker
+
 Puedes usar [Docker](https://docs.docker.com/get-docker/) y/o [docker-compose](https://docs.docker.com/compose/install/) para correr el proyecto.
 
-con `docker-compose` (docker-compose es una herramienta dependiente de Docker). En la raíz del proyecto puedes correr:
-
 ### Desarrollo con docker compose
+
+Con `docker-compose` (docker-compose es una herramienta dependiente de Docker). En la raíz del proyecto puedes correr:
 
 ```sh
 docker-compose up
